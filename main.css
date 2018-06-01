@@ -1,0 +1,40 @@
+.appContainer {
+   
+   margin-left: 1%;
+}
+
+.navbar{
+
+    width:99%;
+    height:50px;
+    background-color: cadetblue;
+    margin-left:1%;
+    border-radius: 5px;
+}
+
+.appTitle{
+
+    margin-left:0.5%;
+    padding-top: 10px;
+}
+
+.newEventBtn{
+
+    margin:0.5%;
+    background-color: #3300FF;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+*{
+
+    font-family: Arial;
+    color:#04032C;
+}

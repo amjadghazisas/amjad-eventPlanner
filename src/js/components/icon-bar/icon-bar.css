@@ -1,0 +1,32 @@
+.barContainer {
+    width: 99%;
+    background-color: cadetblue;
+    overflow: auto;
+    margin-left : 1%;
+    margin-top : 1%;
+    border-radius: 5px;
+}
+
+.barContainer a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.barContainer a:hover {
+    background-color: blue;
+}
+
+.active {
+    background-color: #4CAF50 !important;
+}
+
+.hidden{
+
+    display:none;
+}
