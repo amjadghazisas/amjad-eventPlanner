@@ -159,11 +159,13 @@ var dynamicFormFactory = (function() {
             formField.style = field.style;
 
             //IE screwed up.. doesnt like above line. 
-            //Ugly fix for now, normally would use delegates for handling this
+            //Ugly fix for now, normally would use delegates for handling browser compatability issues
             if(formField.style !== field.style){
 
-                formField.style.display = "block";
-                formField.style.marginTop = "1%";
+                for(var styleProp in field.IEStyles){
+
+                    formField.style[styleProp] = field.IEStyles[styleProp];
+                }
             }
         }
         
