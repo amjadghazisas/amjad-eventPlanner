@@ -106,7 +106,7 @@ var dynamicFormFactory = (function() {
             if(field.type === "submit"){
                 
                 formField.setAttribute('value',field.value);
-                formField.addEventListener("click",function(){
+                formField.addEventListener("click",function(event){
                     event.preventDefault();          
                     
                     if(that.validateModel()){
