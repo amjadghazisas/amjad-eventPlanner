@@ -3,13 +3,13 @@ var dataService = (function() {
     //In real world will be an ajax call to get the data
 	return{
 
-        setCurrentUser(value){
+        setCurrentUser: function(value){
         
             this.currentUser = value;
 
         },
 
-        getCurrentUser(){
+        getCurrentUser: function(){
         
             return this.currentUser;
 
@@ -34,7 +34,7 @@ var dataService = (function() {
          },
 
         // This is a very temporary code and will normally point to an auth service
-        validateUser(obj){
+        validateUser: function(obj){
         
             for(var i=0;i<this.sampleUsers.users.length;i++){
         
