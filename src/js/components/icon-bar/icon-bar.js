@@ -32,6 +32,12 @@ var iconBar = (function() {
         this.barContainer = document.createElement("div");
         this.barContainer.setAttribute('class',"barContainer");
 
+        var titleBar = document.createElement("h3");
+        titleBar.setAttribute("class","appTitle");
+        titleBar.innerHTML = "Event Planner, Let's Get Started!";
+
+       // this.barContainer.appendChild(titleBar);
+
         for(var i=0;i<data.length;i++){
 
             var anchorItem = document.createElement("a");
@@ -52,7 +58,9 @@ var iconBar = (function() {
           
         }
 
-        document.getElementById(this._holder).appendChild(this.barContainer);
+        
+        this._holder.appendChild(titleBar);
+        this._holder.appendChild(this.barContainer);
     };
 
     iconBar.IconBar.prototype.fireNewEventHandler = function(fn){

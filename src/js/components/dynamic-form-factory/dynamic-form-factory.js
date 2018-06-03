@@ -83,7 +83,7 @@ var dynamicFormFactory = (function() {
             this._form.appendChild(formField);
         }
 
-        document.getElementById(this._holder).appendChild(this._form);
+        this._holder.appendChild(this._form);
         
      };
 

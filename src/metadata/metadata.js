@@ -1,7 +1,7 @@
 var loginFormData = {
 
     fields: [
-
+        {elementType:"h1", classes:"form-label", value:"Event Planner Login :", genre:"simple"},
         {elementType:"h3", classes:"form-label", value:"User Name :", genre:"simple"},
         {elementType:"input", classes:"form-input", value:"", genre:"simple",prop:"userName"},
         {elementType:"h3", classes:"form-label", value:"Enter Password", genre:"simple"},

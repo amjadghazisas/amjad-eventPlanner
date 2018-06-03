@@ -6,16 +6,26 @@
     function ready(){
 
         var oLoginPage;
+
+        // This will show app in modal
         var oModalPopup = new modalPopup.getInstance();
+        var oModalContainer = oModalPopup.getContainer();
+        oModalPopup.show();
+        //end
+        
+        // This will show app in page
+        //var oModalContainer = document.getElementById('app');
+        //
         var oLandingPage;
         var oCreateEventPage;
+        var oEventDetailsPage;
         var loginStatus;
         var oIconBar;
         var delegates = {regular:regularFeatureDelegate.RegularFeatureDelegate,premium:premiumFeatureDelegate.PremiumFeatureDelegate};
 
         function buildLoginPage(){
 
-            oLoginPage = new loginPage.LoginPage("app");
+            oLoginPage = new loginPage.LoginPage(oModalContainer);//"app");
             oLoginPage.setMetaData(loginFormData);
             oLoginPage.createPage();
 
@@ -24,7 +34,7 @@
 
                 if(loginStatus){
 
-                    oIconBar = new iconBar.IconBar("iconContainer");
+                    oIconBar = new iconBar.IconBar(oModalPopup.getContainer());
                     oIconBar.setDelegate(new delegates[dataService.getCurrentUser().type]);
                     oIconBar.renderIconBar();
                     oIconBar.newEventHandler(function(){
@@ -70,17 +80,25 @@
             
             oIconBar.show();
             oLandingPage = new landingPage.LandingPage();
-            oLandingPage.createPage("app");
+            oLandingPage.createPage(oModalContainer);//"app");
 
             oLandingPage.eventClickhandler(function(item){
-                oModalPopup.setData(item);
-                oModalPopup.show();
+                oLandingPage.destroy();
+
+                oEventDetailsPage = new eventDetailsPage.EventDetailsPage(oModalContainer);//'app');
+                oEventDetailsPage.setBackHandler(function(){
+                   
+                    oEventDetailsPage.destroy();
+                    buildLandingPage();
+
+                });
+                oEventDetailsPage.setData(item);
             });
         }
 
         function buildEventPage(){
            
-            oCreateEventPage = new createEventPage.CreateEventPage("app");
+            oCreateEventPage = new createEventPage.CreateEventPage(oModalContainer);//"app");
       
         }
         

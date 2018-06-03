@@ -122,10 +122,8 @@ var searchableList = (function() {
         this.containerWrapper.setAttribute("id","containerWrapper-"+this.getData().uid);
         this.containerWrapper.appendChild(this.titleDiv);
         this.containerWrapper.appendChild(this.container);
-
-        var appDiv = document.getElementById(this._holder);
        
-        appDiv.appendChild(this.containerWrapper);
+        this._holder.appendChild(this.containerWrapper);
         
 
 
